@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MemeEditViewController.swift
 //  Meme_ImagePractice
 //
 //  Created by Yash Rao on 11/21/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
+class MemeEditViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     
     @IBOutlet weak var imagePickerView: UIImageView!
     
@@ -186,6 +186,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         let memedImage = generateMemedImage()
         let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: imagePickerView.image! , memedImage: memedImage)
+        
+        let object = UIApplication.shared.delegate
+        let appDelegate = object as! AppDelegate
+        appDelegate.memes.append(meme)
     }
     
     @IBAction func shareButton(_ sender: Any) {
@@ -195,11 +199,18 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let activityViewController = UIActivityViewController(activityItems: [memeToShare], applicationActivities: nil)
         activityViewController.completionWithItemsHandler =
             { (activityType: UIActivityType?, completed: Bool, returnedItems: [Any]?, error: Error?) in
-                if !completed {
-                    return
+                if completed {
+                    self.save()
+                    self.dismiss(animated: true, completion: nil)
+                    self.navigationController?.popViewController(animated: true)
                 }
-                self.save()
         }
-        present(activityViewController, animated: true, completion: nil)
+        self.present(activityViewController, animated: true, completion: nil)
     }
+    
+    @IBAction func dismiss(_ sender: Any) {
+        
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 }
