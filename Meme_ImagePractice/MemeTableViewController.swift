@@ -19,14 +19,15 @@ class MemeTableViewController: UIViewController, UITableViewDataSource, UITableV
     var memes: [Meme]!
     
     override func viewDidLoad() {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        memes = appDelegate.memes
+        tableView.delegate = self
+        tableView.dataSource = self
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print(memes.count)
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        memes = appDelegate.memes
         self.tableView.reloadData()
     }
     
@@ -44,6 +45,13 @@ class MemeTableViewController: UIViewController, UITableViewDataSource, UITableV
         cell.textLabel?.text = "\(selectedMeme.topText)...\(selectedMeme.bottomText)"
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detailVC = self.storyboard!.instantiateViewController(withIdentifier: "MemeDetailViewController") as! MemeDetailViewController
+        detailVC.meme = self.memes[indexPath.row]
+        self.navigationController?.pushViewController(detailVC, animated: true)
+        
     }
     
     
