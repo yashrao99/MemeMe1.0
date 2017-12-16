@@ -18,32 +18,23 @@ class MemeTableViewController: UIViewController, UITableViewDataSource, UITableV
     
     var memes: [Meme]!
     
-    override func viewDidLoad() {
-        tableView.delegate = self
-        tableView.dataSource = self
-    }
-    
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         memes = appDelegate.memes
-        self.tableView.reloadData()
+        tableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.memes.count
+        return memes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
-        
         let selectedMeme = memes[indexPath.row]
-        
         cell.imageView?.image = selectedMeme.memedImage
         cell.textLabel?.text = "\(selectedMeme.topText)...\(selectedMeme.bottomText)"
-        
         return cell
     }
     
@@ -51,7 +42,6 @@ class MemeTableViewController: UIViewController, UITableViewDataSource, UITableV
         let detailVC = self.storyboard!.instantiateViewController(withIdentifier: "MemeDetailViewController") as! MemeDetailViewController
         detailVC.meme = self.memes[indexPath.row]
         self.navigationController?.pushViewController(detailVC, animated: true)
-        
     }
     
     

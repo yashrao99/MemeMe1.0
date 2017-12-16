@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vbB-7Y-DkE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vbB-7Y-DkE">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -260,7 +260,7 @@
                                 </items>
                             </toolbar>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Qb-rm-Lvu">
-                                <rect key="frame" x="38" y="491" width="299" height="53"/>
+                                <rect key="frame" x="38" y="545" width="299" height="53"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="299" id="9PR-D6-Gj4"/>
                                 </constraints>
@@ -269,7 +269,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ucu-XT-XsX">
-                                <rect key="frame" x="38" y="123" width="299" height="53"/>
+                                <rect key="frame" x="38" y="89" width="299" height="53"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="299" id="XM8-HQ-G04"/>
                                 </constraints>
@@ -284,7 +284,9 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ucu-XT-XsX" firstAttribute="leading" secondItem="VZC-Jn-eSE" secondAttribute="leading" constant="38" id="0fd-2o-fnD"/>
-                            <constraint firstItem="ucu-XT-XsX" firstAttribute="top" secondItem="Xai-v5-Chh" secondAttribute="bottom" constant="59" id="2kf-Y1-BLo"/>
+                            <constraint firstItem="ucu-XT-XsX" firstAttribute="top" secondItem="Xai-v5-Chh" secondAttribute="bottom" constant="25" id="2kf-Y1-BLo">
+                                <variation key="heightClass=regular-widthClass=regular" constant="25"/>
+                            </constraint>
                             <constraint firstItem="8sH-mO-khz" firstAttribute="bottom" secondItem="VZC-Jn-eSE" secondAttribute="bottom" id="4Yi-Bk-2C4"/>
                             <constraint firstItem="Xai-v5-Chh" firstAttribute="trailing" secondItem="xBd-eJ-rKc" secondAttribute="trailing" id="5J5-E3-6hI"/>
                             <constraint firstItem="VZC-Jn-eSE" firstAttribute="trailing" secondItem="ucu-XT-XsX" secondAttribute="trailing" constant="38" id="9eD-pO-Tvl"/>
@@ -293,7 +295,9 @@
                             <constraint firstItem="xBd-eJ-rKc" firstAttribute="leading" secondItem="VZC-Jn-eSE" secondAttribute="leading" id="IFi-ig-tf9"/>
                             <constraint firstItem="xBd-eJ-rKc" firstAttribute="trailing" secondItem="VZC-Jn-eSE" secondAttribute="trailing" id="Oei-38-poB"/>
                             <constraint firstItem="8sH-mO-khz" firstAttribute="top" secondItem="xBd-eJ-rKc" secondAttribute="bottom" id="U0C-IZ-fiq"/>
-                            <constraint firstItem="8sH-mO-khz" firstAttribute="top" secondItem="4Qb-rm-Lvu" secondAttribute="bottom" constant="79" id="YWn-j9-LN6"/>
+                            <constraint firstItem="8sH-mO-khz" firstAttribute="top" secondItem="4Qb-rm-Lvu" secondAttribute="bottom" constant="25" id="YWn-j9-LN6">
+                                <variation key="heightClass=regular-widthClass=regular" constant="25"/>
+                            </constraint>
                             <constraint firstItem="4Qb-rm-Lvu" firstAttribute="leading" secondItem="VZC-Jn-eSE" secondAttribute="leading" constant="38" id="cCy-Pv-Mxv"/>
                             <constraint firstItem="VZC-Jn-eSE" firstAttribute="trailing" secondItem="4Qb-rm-Lvu" secondAttribute="trailing" constant="38" id="cpY-3q-q1I"/>
                             <constraint firstItem="8sH-mO-khz" firstAttribute="trailing" secondItem="VZC-Jn-eSE" secondAttribute="trailing" id="dC1-k2-QVp"/>

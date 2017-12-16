@@ -18,15 +18,12 @@ class MemeCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         let space: CGFloat = 3.0
         let width = (self.view.frame.size.width - (2 * space)) / 3.0
         let height = (self.view.frame.size.height - (2 * space)) / 3.0
-        
         flowLayout.minimumInteritemSpacing = space
         flowLayout.minimumLineSpacing = space
         flowLayout.itemSize = CGSize(width: width, height: height)
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,7 +31,6 @@ class MemeCollectionViewController: UICollectionViewController {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         memes = appDelegate.memes
         self.collectionView?.reloadData()
-        
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
